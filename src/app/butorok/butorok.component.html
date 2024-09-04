@@ -1,0 +1,56 @@
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="Cikkszam">Cikkszám</label>
+            <input
+            [(ngModel)] = "cikkszamV"
+            type="text"
+            class="form-control my-4"
+            id="Cikkszam"
+            placeholder="Cikkszam"
+            name="Cikkszam"
+          />
+          <label for="Megnevezes">Megnevezés</label>
+          <input type="text" 
+          [(ngModel)] = "megnevezesV"
+          class="form-control my-4"
+          id="Megnevezes" 
+          placeholder="Megnevezés"
+          name="Megnevezes"/>
+
+          <label for="ar">Ár</label>
+          <input type="number" 
+          [(ngModel)] = "arV"
+          class="form-control my-4"
+          id="ar" 
+          name="ar"/>
+
+          <label for="db">Db</label>
+          <input type="number" 
+          class="form-control my-4"
+          [(ngModel)] = "dbV"
+          id="db" 
+          name="db"/>
+        </div>
+        <button (click)="Felvitel()" type="button" class="btn btn-primary">Felvitel</button>
+    </form>
+    <table class="table table-striped mt-4">
+        <thead class="table-dark">
+          <tr>
+            <th>Cikkszám</th>
+            <th>Megnevezés</th>
+            <th>Ár</th>
+            <th>Darabszám</th>
+          </tr>
+        </thead>
+    
+        <tbody>
+          <tr  *ngFor="let b of butorok">
+            <td>{{b.Cikkszam}}</td>
+            <td>{{b.Megnevezes}}</td>
+            <td>{{b.Ar}} Ft</td>
+            <td>{{b.Db}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
